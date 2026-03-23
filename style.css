@@ -1707,29 +1707,30 @@ a {
 }
 
 @media (max-width: 640px) {
-    .hero {
-    min-height: auto;
-    padding: 5.5rem 1rem 3rem;
+  .hero {
+    min-height: 95svh;
+    padding: 0.5rem 1rem 10rem;
     align-items: start;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    display: grid;
 }
 
 .hero-content {
-    max-width: 100%;
-    padding-top: 1.2rem;
+    position: relative;
+    z-index: 2;
+    max-width: 64%;
+    padding-top: 1.8rem;
 }
 
 .hero-image {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: min(72vw, 260px);
-    margin: 1.25rem auto 0;
-    justify-content: center;
+    position: absolute;
+    right: -0.5rem;
+    bottom: 5.5rem;
+    width: min(42vw, 180px);
+    margin: 0;
+    justify-content: flex-end;
     z-index: 1;
-    opacity: 1;
+    opacity: 0.98;
 }
 
     .scroll-stage {
@@ -1985,14 +1986,15 @@ a {
     }
 
     .hero-image {
-        position: absolute;
-        right: 1.5rem;
-        bottom: 16.25rem;
-        margin: 0;
-        width: min(56vw, 282px);
-        z-index: -1;
-        opacity: 0.98;
-    }
+    position: absolute;
+    right: -0.5rem;
+    bottom: 5.5rem;
+    width: min(42vw, 180px);
+    margin: 0;
+    justify-content: flex-end;
+    z-index: 1;
+    opacity: 0.98;
+}
 
     .hero::after {
         height: 0;
