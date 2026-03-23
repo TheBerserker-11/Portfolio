@@ -497,14 +497,13 @@ a {
 
 .hero {
     position: relative;
-    min-height: auto;
-    display: flex;
+    min-height: 100vh;
+    display: grid;
     grid-template-columns: minmax(320px, 520px) 1fr;
-    align-items: start;
-    padding: 5.5rem 1rem 3rem;
-    overflow: hidden;
+    align-items: center;
+    padding: 6rem 5.5vw 0;
+    overflow: visible;
     z-index: 2;
-    flex-direction: column;
 }
 
 .hero::after {
@@ -529,6 +528,7 @@ a {
     position: relative;
     z-index: 2;
     align-self: center;
+    max-width: 520px;
 }
 
 .hero-content h1 {
@@ -692,13 +692,15 @@ a {
 }
 
 .hero-image {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: min(72vw, 260px);
-    margin: 1.25rem auto 0;
-    justify-content: center;
-    z-index: 1;
+    position: absolute;
+    right: 3vw;
+    bottom: 0;
+    width: min(34vw, 460px);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    z-index: 4;
+    margin: 0;
     opacity: 1;
 }
 .hero-image img {
@@ -706,7 +708,7 @@ a {
     height: auto;
     display: block;
     object-fit: contain;
-    filter: drop-shadow(0 25px 50px rgba(0,0,0,0.35));
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.35));
 }
 
 .scroll-stage {
