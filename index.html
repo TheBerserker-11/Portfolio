@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/logo.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Daniel Loyd C. Andres</title>
+</head>
+<body>
+    <audio id="bg-music" loop preload="auto" autoplay playsinline>
+        <source src="assets/Music/Still Loving You.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-toggle" type="button" aria-pressed="false" aria-label="Play background music">
+        <span class="music-toggle__cover" aria-hidden="true">
+            <img src="assets/Music/Scorpions.jpg" alt="">
+        </span>
+        <span class="music-toggle__text">
+            <span class="music-toggle__eyebrow">Background Audio</span>
+            <span class="music-toggle__label">Still Loving You</span>
+            <span class="music-toggle__meta">Scorpions</span>
+        </span>
+        <span class="music-toggle__icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </span>
+        <span class="music-toggle__status" aria-hidden="true"></span>
+    </button>
+
+    <header class="site-header">
+        <a href="#" class="brand">Daniel Loyd C. Andres</a>
+        <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="site-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="menu-overlay" id="site-menu" aria-hidden="true">
+        <div class="menu-overlay__backdrop"></div>
+        <nav class="menu-panel" aria-label="Site navigation">
+            <a href="#home" class="menu-link">Home</a>
+            <a href="#skills" class="menu-link">Skills</a>
+            <a href="#works" class="menu-link">Works</a>
+            <a href="#contact" class="menu-link">Contact</a>
+            <button class="menu-link menu-link-button menu-music-toggle" type="button" aria-expanded="false" aria-controls="music-modal">
+                Music
+            </button>
+        </nav>
+    </div>
+
+    <div class="music-modal" id="music-modal" aria-hidden="true">
+        <div class="music-modal__backdrop"></div>
+        <div class="music-modal__panel" role="dialog" aria-modal="true" aria-labelledby="music-modal-title">
+            <div class="music-modal__header">
+                <div>
+                    <p class="music-modal__eyebrow">Playlist</p>
+                    <h3 class="music-modal__title" id="music-modal-title">Old But Gold</h3>
+                </div>
+                <button class="music-modal__close" type="button" aria-label="Close music modal">&times;</button>
+            </div>
+            <div class="music-modal__list">
+                <button
+                    class="menu-song"
+                    type="button"
+                    data-track="still loving you"
+                    data-src="assets/Music/Still Loving You.mp3"
+                    data-cover="assets/Music/Scorpions.jpg"
+                    data-title="Still Loving You"
+                    data-artist="Scorpions"
+                >
+                    <span class="menu-song__title">Still Loving You</span>
+                    <span class="menu-song__artist">Scorpions</span>
+                </button>
+                <button
+                    class="menu-song"
+                    type="button"
+                    data-track="Love Hurts"
+                    data-src="assets/Music/Love Hurts.mp3"
+                    data-cover="assets/Music/Nazareth.jpg"
+                    data-title="Love Hurts"
+                    data-artist="Nazareth"
+                >
+                    <span class="menu-song__title">Love Hurts</span>
+                    <span class="menu-song__artist">Nazareth</span>
+                </button>
+                <button
+                    class="menu-song"
+                    type="button"
+                    data-track="Hotel California"
+                    data-src="assets/Music/Hotel California.mp3"
+                    data-cover="assets/Music/Eagles.jpg"
+                    data-title="Hotel California"
+                    data-artist="Eagles"
+                >
+                    <span class="menu-song__title">Hotel California</span>
+                    <span class="menu-song__artist">Eagles</span>
+                </button>
+                <button
+                    class="menu-song"
+                    type="button"
+                    data-track="Slipping Through My Fingers"
+                    data-src="assets/Music/Slipping Through My Fingers.mp3"
+                    data-cover="assets/Music/Abba.jpg"
+                    data-title="Slipping Through My Fingers"
+                    data-artist="ABBA"
+                >
+                    <span class="menu-song__title">Slipping Through My Fingers</span>
+                    <span class="menu-song__artist">ABBA</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="greeting">What's up!</p>
+            <h1 class="name">I am Daniel Loyd C. Andres</h1>
+            <h2 class="tagline">
+                <span class="tagline-text" aria-live="polite"></span>
+            </h2>
+
+            <div class="socials">
+                <a href="https://github.com/TheBerserker-11" target="_blank" class="social-btn github-btn" aria-label="GitHub">
+                    <img src="assets/github.svg" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/11_jackal/" target="_blank" class="social-btn instagram-btn" aria-label="Instagram">
+                    <img src="assets/instagram.svg" alt="Instagram">
+                </a>
+            </div>
+
+            <div class="buttons">
+                <a href="assets/resume.pdf" target="_blank" class="btn-outline resume-btn">Resume</a>
+                <a href="https://www.instagram.com/11_jackal/" target="_blank" class="btn-primary">Let's Talk</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="assets/Daniel Loyd C. Andres.png" alt="Daniel Loyd Andres portrait">
+        </div>
+    </section>
+
+    <section class="scroll-stage" aria-label="Portfolio scroll animation">
+        <div class="scroll-stage__sticky">
+            <div class="paint-canvas">
+                <div class="paint-stroke paint-stroke-one"></div>
+                <div class="paint-stroke paint-stroke-two"></div>
+                <div class="paint-stroke paint-stroke-three"></div>
+                <div class="paint-stroke paint-stroke-four"></div>
+            </div>
+
+            <div class="paint-scene">
+                <h3>I turn ideas into reliable digital systems through clean code and thoughtful design.</h3>
+                <p>
+                   I turn ideas into reliable digital systems through clean code and thoughtful design.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="next-section" id="skills">
+        <div class="next-section__content">
+            <div class="skills-intro">
+                <p>
+                    I build <span>full stack systems </span>with
+                    <span>Laravel</span> and <span>modern web technologies</span>, focusing on <span>secure </span>,
+                    updated <span>user-centered solutions</span>.
+                </p>
+            </div>
+
+            <div class="skills-groups">
+                <div class="skills-group skills-group-wide">
+                    <h3>Frontend Development</h3>
+                    <div class="skills-grid">
+                        <button class="skill-card" type="button" data-skill-name="HTML5" data-skill-description="HTML5 (Hypertext Markup Language 5) is the standard markup language used to structure and present content on the World Wide Web. It provides the foundation of a webpage by defining elements like headings, text, images, links, forms, audio, and video." aria-label="Show details for HTML5">
+                            <img src="assets/html.svg" alt="HTML5">
+                        </button>
+                        <button class="skill-card" type="button" data-skill-name="CSS3" data-skill-description="CSS3 (Cascading Style Sheets) is used to style and layout web pages. It controls colors, spacing, typography, animations, responsiveness, and the overall visual presentation of HTML content." aria-label="Show details for CSS3">
+                            <img src="assets/css.svg" alt="CSS3">
+                        </button>
+                        <button class="skill-card" type="button" data-skill-name="JavaScript" data-skill-description="JavaScript is a programming language that adds interactivity and dynamic behavior to websites. It is commonly used for animations, DOM manipulation, form validation, APIs, and real-time user interactions." aria-label="Show details for JavaScript">
+                            <img src="assets/javascript.svg" alt="JavaScript">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="skills-row">
+                    <div class="skills-group">
+                        <h3>User Interface</h3>
+                        <div class="skills-grid skills-grid-small">
+                            <button class="skill-card" type="button" data-skill-name="Adobe XD" data-skill-description="Adobe XD is a vector-based design tool used for creating user experiences, wireframes, and prototypes for websites and applications." aria-label="Show details for Adobe XD">
+                                <img src="assets/xd.svg" alt="Adobe XD">
+                            </button>
+                            <button class="skill-card" type="button" data-skill-name="Canva" data-skill-description="Canva is a visual design platform used to create presentations, graphics, social media assets, and branded content quickly through templates and drag-and-drop tools." aria-label="Show details for Canva">
+                                <img src="assets/canva.png" alt="Canva">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="skills-group">
+                        <h3>Other Skills</h3>
+                        <div class="skills-grid skills-grid-small">
+                            <button class="skill-card" type="button" data-skill-name="Git" data-skill-description="Git is a version control system used to track code changes, manage branches, and collaborate with other developers safely across projects." aria-label="Show details for Git">
+                                <img src="assets/git.svg" alt="Git">
+                            </button>
+                            <button class="skill-card" type="button" data-skill-name="Railway" data-skill-description="Railway is a cloud deployment platform that helps developers deploy web applications, databases, and backend services quickly with simple infrastructure management." aria-label="Show details for Railway">
+                                <img src="assets/railway.png" alt="Railway">
+                            </button>
+                            <button class="skill-card" type="button" data-skill-name="Resend" data-skill-description="Resend is an email API platform used to send transactional emails such as verification messages, notifications, and workflow-based communications from web apps." aria-label="Show details for Resend">
+                                <img src="assets/resend.png" alt="Resend">
+                            </button>
+            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <h3>Frameworks</h3>
+                    <div class="skills-grid skills-grid-small">
+                        <button class="skill-card" type="button" data-skill-name="Laravel" data-skill-description="Laravel is a PHP web framework designed for building modern web applications with elegant syntax. It includes routing, authentication, database tools, queues, mailing, and strong developer productivity features." aria-label="Show details for Laravel">
+                            <img src="assets/laravel.svg" alt="Laravel">
+                        </button>
+                        <button class="skill-card" type="button" data-skill-name="Bootstrap" data-skill-description="Bootstrap is a front-end framework that provides ready-made responsive layout utilities, components, and styling patterns for faster web interface development." aria-label="Show details for Bootstrap">
+                            <img src="assets/bootstrap.svg" alt="Bootstrap">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="skills-group">
+                    <h3>Backend Development</h3>
+                    <div class="skills-grid skills-grid-small">
+                        <button class="skill-card" type="button" data-skill-name="MySQL" data-skill-description="MySQL is a relational database management system used to store, organize, and query structured application data efficiently." aria-label="Show details for MySQL">
+                            <img src="assets/mysql.svg" alt="MySQL">
+                        </button>
+                        <button class="skill-card" type="button" data-skill-name="PHP" data-skill-description="PHP is a server-side scripting language widely used for web development. It powers dynamic websites and handles backend logic, routing, sessions, and database operations." aria-label="Show details for PHP">
+                            <img src="assets/php.svg" alt="PHP">
+                        </button>
+                        <button class="skill-card" type="button" data-skill-name="MySQL Workbench" data-skill-description="MySQL Workbench is a visual database tool used for database design, SQL development, administration, and server management in MySQL environments." aria-label="Show details for MySQL Workbench">
+                            <img src="assets/mysqlworkbench.svg" alt="MySQL Workbench">
+                        </button>
+                    </div>
+                </div>
+
+                <div class="skill-tooltip" id="skill-tooltip" aria-live="polite" hidden>
+                    <div class="skill-tooltip__header">
+                        <p class="skill-tooltip__eyebrow">Skill Overview</p>
+                        <button class="skill-tooltip__close" type="button" aria-label="Close skill details">&times;</button>
+                    </div>
+                    <h4 class="skill-tooltip__title">HTML5</h4>
+                    <p class="skill-tooltip__description">
+                        HTML5 (Hypertext Markup Language 5) is the standard markup language used to structure and present content on the World Wide Web. It provides the foundation of a webpage by defining elements like headings, text, images, links, forms, audio, and video.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="works-fold-section" aria-label="My works intro">
+        <div class="works-fold-screen">
+            <div class="works-fold-3d">
+                <div class="works-fold works-fold-top">
+                    <div class="works-fold-align">
+                        <div class="works-fold-content">
+                            <div class="works-marquee">
+                                <div class="works-track">
+                                    <span>My Works.</span><span class="works-focus">My Works.</span><span>My Works.</span><span>My Works.</span><span>My Works.</span><span>My Works.</span>
+                                </div>
+                            </div>
+                            <div class="works-marquee">
+                                <div class="works-track works-track-reverse">
+                                    <span>Full Stack.</span><span class="works-focus">Full Stack.</span><span>Full Stack.</span><span>Full Stack.</span><span>Full Stack.</span><span>Full Stack.</span>
+                                </div>
+                            </div>
+                            <div class="works-marquee">
+                                <div class="works-track">
+                                    <span>Web Apps.</span><span class="works-focus">Web Apps.</span><span>Web Apps.</span><span>Web Apps.</span><span>Web Apps.</span><span>Web Apps.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="works-fold works-fold-center">
+                    <div class="works-fold-align">
+                        <div class="works-fold-content works-fold-center-content">
+                            <p class="works-label">Projects</p>
+                            <h2>My Works</h2>
+                            <p class="works-description">
+                                I have independently built many full-stack projects, handling the frontend,
+                                backend, APIs, security, database, and modern best practices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="works-fold works-fold-bottom">
+                    <div class="works-fold-align">
+                        <div class="works-fold-content">
+                            <div class="works-marquee">
+                                <div class="works-track">
+                                    <span>Laravel.</span><span class="works-focus">Laravel.</span><span>Laravel.</span><span>Laravel.</span><span>Laravel.</span><span>Laravel.</span>
+                                </div>
+                            </div>
+                            <div class="works-marquee">
+                                <div class="works-track works-track-reverse">
+                                    <span>PHP.</span><span class="works-focus">PHP.</span><span>PHP.</span><span>PHP.</span><span>PHP.</span><span>PHP.</span>
+                                </div>
+                            </div>
+                            <div class="works-marquee">
+                                <div class="works-track">
+                                    <span>Projects.</span><span class="works-focus">Projects.</span><span>Projects.</span><span>Projects.</span><span>Projects.</span><span>Projects.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-showcase" id="works" aria-label="Project cards">
+        <div class="projects-showcase__intro">
+            <p class="projects-label">Projects</p>
+            <h2>My Works</h2>
+            <p>
+                I have independently built many <span>full-stack</span> projects, handling the
+                <span>frontend</span>, <span>backend</span>, <span>APIs</span>, <span>security</span>,
+                <span>database</span>, and <span>modern best practices</span>.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+            <a href="https://villadiana.shop/" target="_blank" rel="noopener noreferrer" class="project-card-link" data-project-link="https://villadiana.shop/" aria-label="Open Villadiana project">
+                <article class="project-card project-card-dark">
+                    <div class="project-card__bg"></div>
+                    <div class="project-card__glow"></div>
+                    <div class="project-card__stack">
+                        <img src="assets/php.svg" alt="PHP">
+                        <img src="assets/laravel.svg" alt="Laravel">
+                        <img src="assets/resend.png" alt="Resend">
+                        <img src="assets/railway.png" alt="Railway">
+                    </div>
+                    <div class="project-card__mockup project-card__mockup-image">
+                        <img src="assets/thesis.png" alt="E-PACD project preview">
+                    </div>
+                    <div class="project-card__body">
+                        <h3>Hotel Booking System with Web-Based Virtual Tour</h3>
+                        <p>A web-based hotel booking platform with an interactive virtual tour that helps users explore rooms and reserve accommodations online.</p>
+                    </div>
+                </article>
+            </a>
+        </div>
+    </section>
+
+    <section class="collaborate-marquee-section" aria-label="Collaboration marquee">
+        <div class="collaborate-marquee-section__sticky">
+            <div class="collaborate-marquee-section__bg" aria-hidden="true">
+                <div class="collaborate-row">
+                    <div class="collaborate-row__band">
+                        <div class="collaborate-row__track">
+                            <span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span>
+                        </div>
+                        <div class="collaborate-row__track" aria-hidden="true">
+                            <span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="collaborate-row collaborate-row--reverse">
+                    <div class="collaborate-row__band">
+                        <div class="collaborate-row__track">
+                            <span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span>
+                        </div>
+                        <div class="collaborate-row__track" aria-hidden="true">
+                            <span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="collaborate-row">
+                    <div class="collaborate-row__band">
+                        <div class="collaborate-row__track">
+                            <span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span>
+                        </div>
+                        <div class="collaborate-row__track" aria-hidden="true">
+                           <span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="collaborate-row collaborate-row--reverse">
+                    <div class="collaborate-row__band">
+                        <div class="collaborate-row__track">
+                            <span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span>
+                        </div>
+                        <div class="collaborate-row__track" aria-hidden="true">
+                            <span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span><span>Collaborate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collaborate-marquee-section__content">
+                <h2 class="collaborate-marquee-title" data-text="Collaborate with me :)">
+                    Collaborate with me :)
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="collaborate-section" id="contact" aria-label="Collaboration call to action">
+        <div class="collaborate-section__sticky">
+            <div class="collaborate-section__bg" aria-hidden="true">
+                <div class="collaborate-blob collaborate-blob-one"></div>
+                <div class="collaborate-blob collaborate-blob-two"></div>
+                <div class="collaborate-blob collaborate-blob-three"></div>
+                <div class="collaborate-blob collaborate-blob-four"></div>
+                <div class="collaborate-orb collaborate-orb-one"></div>
+                <div class="collaborate-orb collaborate-orb-two"></div>
+            </div>
+
+            <div class="collaborate-section__content">
+                <p class="collaborate-kicker">Let&apos;s Connect</p>
+                <div class="collaborate-counter">
+                    <strong>Open</strong>
+                    <span>for freelance and collaboration</span>
+                </div>
+                <h2 class="collaborate-title">
+                    Connect with me on social media.
+                </h2>
+                <div class="collaborate-socials">
+                    <a href="https://github.com/TheBerserker-11" target="_blank" rel="noopener noreferrer" class="collaborate-social-btn" aria-label="GitHub">
+                        <img src="assets/github.svg" alt="GitHub">
+                    </a>
+                    <a href="https://www.instagram.com/11_jackal/" target="_blank" rel="noopener noreferrer" class="collaborate-social-btn" aria-label="Instagram">
+                        <img src="assets/instagram.svg" alt="Instagram">
+                    </a>
+                </div>
+                <p class="collaborate-email">
+                    Contact me:
+                    <a href="https://www.instagram.com/egg_plant.ph/?hl=en" target="_blank" rel="noopener noreferrer">danielloydandres8@gmail.com</a>
+                </p>
+                <div class="collaborate-actions">
+                    <a href="assets/resume.pdf" target="_blank" class="btn-outline resume-btn2">Resume</a>
+                    <a href="https://www.instagram.com/11_jackal/" target="_blank" class="btn-primary">Let&apos;s Talk</a>
+                </div>
+                <p class="collaborate-note">This site looks best on desktop, but it still feels smooth on mobile.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <script>
+        const scrollStage = document.querySelector('.scroll-stage');
+        const taglineText = document.querySelector('.tagline-text');
+        const worksFoldSection = document.querySelector('.works-fold-section');
+        const collaborateSection = document.querySelector('.collaborate-section');
+        const collaborateMarqueeSection = document.querySelector('.collaborate-marquee-section');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+        const projectCardLinks = document.querySelectorAll('.project-card-link');
+        const skillCards = document.querySelectorAll('.skill-card');
+        const skillsGroups = document.querySelector('.skills-groups');
+        const skillTooltip = document.querySelector('#skill-tooltip');
+        const skillTooltipTitle = skillTooltip?.querySelector('.skill-tooltip__title');
+        const skillTooltipDescription = skillTooltip?.querySelector('.skill-tooltip__description');
+        const skillTooltipClose = skillTooltip?.querySelector('.skill-tooltip__close');
+        const bgMusic = document.querySelector('#bg-music');
+        const bgMusicSource = bgMusic?.querySelector('source');
+        const musicToggle = document.querySelector('.music-toggle');
+        const musicToggleCover = musicToggle?.querySelector('.music-toggle__cover img');
+        const musicToggleLabel = musicToggle?.querySelector('.music-toggle__label');
+        const musicToggleEyebrow = musicToggle?.querySelector('.music-toggle__eyebrow');
+        const musicToggleMeta = musicToggle?.querySelector('.music-toggle__meta');
+        const menuMusicToggle = document.querySelector('.menu-music-toggle');
+        const musicModal = document.querySelector('.music-modal');
+        const musicModalClose = document.querySelector('.music-modal__close');
+        const menuSongButtons = document.querySelectorAll('.menu-song');
+        const playlistButtons = Array.from(menuSongButtons);
+        const initialTrackButton = playlistButtons[0];
+        let activeSkillCard = null;
+        let autoplayPrimed = true;
+        let currentTrack = initialTrackButton ? {
+            id: initialTrackButton.dataset.track || '',
+            title: initialTrackButton.dataset.title || 'Unknown Track',
+            artist: initialTrackButton.dataset.artist || 'Unknown Artist',
+            src: initialTrackButton.dataset.src || '',
+            cover: initialTrackButton.dataset.cover || ''
+        } : {
+            title: 'Still Loving You',
+            artist: 'Scorpions',
+            src: 'assets/Music/Still Loving You.mp3',
+            cover: 'assets/Music/Scorpions.jpg',
+            id: 'still loving you'
+        };
+        const taglinePhrases = [
+            'Build smart. Scale fast. Deliver value.',
+            'Turning ideas into scalable digital solutions',
+            'Code with purpose, build with impact',
+            'Simple solutions for complex digital problems',
+            'Creating systems that make life easier',
+            'From idea to system, efficiently built',
+            'Designing clean, scalable, and reliable systems'
+        ];
+
+        function updateScrollStage() {
+            if (!scrollStage) return;
+
+            const rect = scrollStage.getBoundingClientRect();
+            const total = Math.max(scrollStage.offsetHeight - window.innerHeight, 1);
+            const progress = Math.min(Math.max(-rect.top / total, 0), 1);
+
+            scrollStage.style.setProperty('--scroll-progress', progress.toFixed(3));
+        }
+
+        updateScrollStage();
+        window.addEventListener('scroll', updateScrollStage, { passive: true });
+        window.addEventListener('resize', updateScrollStage);
+
+        function updateWorksFold() {
+            if (!worksFoldSection) return;
+
+            const rect = worksFoldSection.getBoundingClientRect();
+            const total = Math.max(worksFoldSection.offsetHeight - window.innerHeight, 1);
+            const progress = Math.min(Math.max(-rect.top / total, 0), 1);
+
+            worksFoldSection.style.setProperty('--works-progress', progress.toFixed(3));
+        }
+
+        updateWorksFold();
+        window.addEventListener('scroll', updateWorksFold, { passive: true });
+        window.addEventListener('resize', updateWorksFold);
+
+        function updateCollaborateSection() {
+            if (!collaborateSection) return;
+
+            const rect = collaborateSection.getBoundingClientRect();
+            const total = Math.max(collaborateSection.offsetHeight - window.innerHeight, 1);
+            const progress = Math.min(Math.max(-rect.top / total, 0), 1);
+
+            collaborateSection.style.setProperty('--collaborate-progress', progress.toFixed(3));
+        }
+
+        updateCollaborateSection();
+        window.addEventListener('scroll', updateCollaborateSection, { passive: true });
+        window.addEventListener('resize', updateCollaborateSection);
+
+        function updateCollaborateMarqueeSection() {
+            if (!collaborateMarqueeSection) return;
+
+            const rect = collaborateMarqueeSection.getBoundingClientRect();
+            const total = Math.max(collaborateMarqueeSection.offsetHeight - window.innerHeight, 1);
+            const progress = Math.min(Math.max(-rect.top / total, 0), 1);
+
+            collaborateMarqueeSection.style.setProperty('--collaborate-marquee-progress', progress.toFixed(3));
+        }
+
+        updateCollaborateMarqueeSection();
+        window.addEventListener('scroll', updateCollaborateMarqueeSection, { passive: true });
+        window.addEventListener('resize', updateCollaborateMarqueeSection);
+
+        function setMenuState(isOpen) {
+            if (!menuToggle || !menuOverlay) return;
+
+            menuToggle.classList.toggle('is-open', isOpen);
+            menuOverlay.classList.toggle('is-open', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuOverlay.setAttribute('aria-hidden', String(!isOpen));
+            document.body.classList.toggle('menu-open', isOpen);
+
+            if (!isOpen) {
+                setMenuMusicState(false);
+            }
+        }
+
+        function setMenuMusicState(isOpen) {
+            if (!menuMusicToggle || !musicModal) return;
+
+            menuMusicToggle.setAttribute('aria-expanded', String(isOpen));
+            musicModal.classList.toggle('is-open', isOpen);
+            musicModal.setAttribute('aria-hidden', String(!isOpen));
+        }
+
+        if (menuToggle && menuOverlay) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = !menuToggle.classList.contains('is-open');
+                setMenuState(isOpen);
+            });
+
+            menuLinks.forEach((link) => {
+                link.addEventListener('click', (event) => {
+                    const targetId = link.getAttribute('href');
+
+                    if (!targetId || !targetId.startsWith('#')) {
+                        setMenuState(false);
+                        return;
+                    }
+
+                    event.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+
+                    window.requestAnimationFrame(() => {
+                        setMenuState(false);
+                    });
+                });
+            });
+
+            menuOverlay.addEventListener('click', (event) => {
+                if (event.target === menuOverlay || event.target.classList.contains('menu-overlay__backdrop')) {
+                    setMenuState(false);
+                }
+            });
+
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    setMenuMusicState(false);
+                    setMenuState(false);
+                }
+            });
+        }
+
+        menuMusicToggle?.addEventListener('click', () => {
+            setMenuMusicState(true);
+        });
+
+        musicModalClose?.addEventListener('click', () => {
+            setMenuMusicState(false);
+        });
+
+        musicModal?.addEventListener('click', (event) => {
+            if (event.target === musicModal || event.target.classList.contains('music-modal__backdrop')) {
+                setMenuMusicState(false);
+            }
+        });
+
+        projectCardLinks.forEach((link) => {
+            const card = link.querySelector('.project-card');
+
+            link.addEventListener('pointermove', (event) => {
+                if (!card) return;
+
+                const rect = link.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateY = ((x - centerX) / centerX) * 8;
+                const rotateX = ((centerY - y) / centerY) * 8;
+
+                card.style.setProperty('--card-rotate-x', `${rotateX.toFixed(2)}deg`);
+                card.style.setProperty('--card-rotate-y', `${rotateY.toFixed(2)}deg`);
+                card.style.setProperty('--card-glow-x', `${((x / rect.width) * 100).toFixed(2)}%`);
+                card.style.setProperty('--card-glow-y', `${((y / rect.height) * 100).toFixed(2)}%`);
+            });
+
+            link.addEventListener('pointerleave', () => {
+                if (!card) return;
+
+                card.style.setProperty('--card-rotate-x', '0deg');
+                card.style.setProperty('--card-rotate-y', '0deg');
+                card.style.setProperty('--card-glow-x', '50%');
+                card.style.setProperty('--card-glow-y', '50%');
+            });
+
+            link.addEventListener('click', (event) => {
+                const projectUrl = link.dataset.projectLink;
+
+                if (!projectUrl) {
+                    event.preventDefault();
+                }
+            });
+        });
+
+        function syncMenuSongState() {
+            playlistButtons.forEach((button) => {
+                const isActive = (button.dataset.src || '') === currentTrack.src;
+                button.classList.toggle('is-active', isActive);
+                button.setAttribute('aria-pressed', String(isActive));
+            });
+        }
+
+        function getCurrentTrackIndex() {
+            if (!playlistButtons.length) return -1;
+
+            return playlistButtons.findIndex((button) => (button.dataset.src || '') === currentTrack.src);
+        }
+
+        function updateMusicDisplay() {
+            if (musicToggleCover) {
+                musicToggleCover.src = currentTrack.cover;
+                musicToggleCover.alt = `${currentTrack.title} cover`;
+            }
+
+            if (musicToggleLabel) {
+                musicToggleLabel.textContent = currentTrack.title;
+            }
+
+            if (musicToggleMeta) {
+                musicToggleMeta.textContent = currentTrack.artist;
+            }
+
+            syncMenuSongState();
+        }
+
+        function ensureCurrentTrackLoaded() {
+            if (!bgMusic || !bgMusicSource || !currentTrack.src) return false;
+
+            if (bgMusicSource.getAttribute('src') !== currentTrack.src) {
+                bgMusic.pause();
+                bgMusicSource.src = currentTrack.src;
+                bgMusic.load();
+            }
+
+            updateMusicDisplay();
+            return true;
+        }
+
+        async function tryAutoplayCurrentTrack() {
+            if (!ensureCurrentTrackLoaded()) return;
+
+            if (!bgMusic.paused) {
+                autoplayPrimed = bgMusic.muted;
+                setMusicButtonState(true);
+                return;
+            }
+
+            try {
+                bgMusic.muted = false;
+                await bgMusic.play();
+                autoplayPrimed = false;
+                setMusicButtonState(true);
+            } catch (error) {
+                try {
+                    bgMusic.muted = true;
+                    await bgMusic.play();
+                    autoplayPrimed = true;
+                    setMusicButtonState(true);
+                } catch (mutedError) {
+                    setMusicButtonState(false);
+                }
+            }
+        }
+
+        function queueAutoplayAttempts() {
+            if (!bgMusic) return;
+
+            window.addEventListener('DOMContentLoaded', () => {
+                if (autoplayPrimed) {
+                    tryAutoplayCurrentTrack();
+                }
+            });
+
+            window.addEventListener('load', () => {
+                if (autoplayPrimed && bgMusic.paused) {
+                    tryAutoplayCurrentTrack();
+                }
+            });
+
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible' && autoplayPrimed && bgMusic.paused) {
+                    tryAutoplayCurrentTrack();
+                }
+            });
+        }
+
+        async function activateAudioWithSound() {
+            if (!bgMusic || !ensureCurrentTrackLoaded()) return;
+
+            bgMusic.muted = false;
+            autoplayPrimed = false;
+
+            try {
+                if (bgMusic.paused) {
+                    await bgMusic.play();
+                }
+                setMusicButtonState(true);
+            } catch (error) {
+                setMusicButtonState(false);
+            }
+        }
+
+        async function toggleMusicPlayback() {
+            if (!bgMusic || !ensureCurrentTrackLoaded()) {
+                setMusicButtonState(false, true);
+                return;
+            }
+
+            try {
+                if (bgMusic.muted || autoplayPrimed) {
+                    await activateAudioWithSound();
+                } else if (bgMusic.paused) {
+                    await bgMusic.play();
+                    setMusicButtonState(true);
+                } else {
+                    bgMusic.pause();
+                    setMusicButtonState(false);
+                }
+            } catch (error) {
+                setMusicButtonState(false, true);
+            }
+        }
+
+        async function changeTrackByOffset(offset) {
+            if (!playlistButtons.length) return;
+
+            const currentIndex = getCurrentTrackIndex();
+            const baseIndex = currentIndex >= 0 ? currentIndex : 0;
+            const nextIndex = (baseIndex + offset + playlistButtons.length) % playlistButtons.length;
+
+            await changeTrack(playlistButtons[nextIndex], true);
+        }
+
+        function isTypingTarget(target) {
+            if (!(target instanceof HTMLElement)) return false;
+
+            return target.isContentEditable || ['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName);
+        }
+
+        async function changeTrack(button, shouldAutoplay = false) {
+            if (!bgMusic || !bgMusicSource || !button) return;
+
+            currentTrack = {
+                id: button.dataset.track || '',
+                title: button.dataset.title || 'Unknown Track',
+                artist: button.dataset.artist || 'Unknown Artist',
+                src: button.dataset.src || '',
+                cover: button.dataset.cover || ''
+            };
+
+            bgMusic.pause();
+            bgMusicSource.src = currentTrack.src;
+            bgMusic.load();
+            updateMusicDisplay();
+
+            if (!currentTrack.src) {
+                setMusicButtonState(false, true);
+                return;
+            }
+
+            if (shouldAutoplay) {
+                try {
+                    bgMusic.muted = false;
+                    autoplayPrimed = false;
+                    await bgMusic.play();
+                    setMusicButtonState(true);
+                } catch (error) {
+                    setMusicButtonState(false);
+                }
+            } else {
+                setMusicButtonState(false);
+            }
+        }
+
+        function setMusicButtonState(isPlaying, isUnavailable = false) {
+            if (!musicToggle) return;
+
+            if (isUnavailable) {
+                musicToggle.classList.remove('is-playing');
+                musicToggle.classList.add('is-unavailable');
+                musicToggle.disabled = true;
+                musicToggle.setAttribute('aria-pressed', 'false');
+                musicToggle.setAttribute('aria-label', 'Background music unavailable');
+                if (musicToggleEyebrow) musicToggleEyebrow.textContent = 'Audio';
+                if (musicToggleLabel) musicToggleLabel.textContent = 'Music N/A';
+                if (musicToggleMeta) musicToggleMeta.textContent = 'Add a valid track';
+                return;
+            }
+
+            musicToggle.disabled = false;
+            musicToggle.classList.remove('is-unavailable');
+            musicToggle.classList.toggle('is-playing', isPlaying);
+            musicToggle.setAttribute('aria-pressed', String(isPlaying));
+            musicToggle.setAttribute('aria-label', isPlaying ? 'Pause background music' : 'Play background music');
+            if (musicToggleEyebrow) musicToggleEyebrow.textContent = isPlaying ? 'Now Playing' : 'Background Audio';
+        }
+
+        if (bgMusic && musicToggle) {
+            bgMusic.volume = 0.35;
+            updateMusicDisplay();
+            syncMenuSongState();
+
+            musicToggle.addEventListener('click', async () => {
+                await toggleMusicPlayback();
+            });
+
+            bgMusic.addEventListener('ended', () => {
+                setMusicButtonState(false);
+            });
+
+            bgMusic.addEventListener('error', () => {
+                setMusicButtonState(false, true);
+            });
+
+            tryAutoplayCurrentTrack();
+            queueAutoplayAttempts();
+            window.addEventListener('pointerdown', activateAudioWithSound, { once: true });
+            window.addEventListener('touchstart', activateAudioWithSound, { once: true });
+        }
+
+        playlistButtons.forEach((button) => {
+            button.addEventListener('click', async () => {
+                await changeTrack(button, true);
+                setMenuMusicState(false);
+            });
+        });
+
+        function closeSkillTooltip() {
+            if (!skillTooltip) return;
+
+            skillTooltip.hidden = true;
+            skillTooltip.classList.remove('is-visible');
+            skillTooltip.style.removeProperty('top');
+            skillTooltip.style.removeProperty('left');
+            document.body.classList.remove('skill-tooltip-open');
+
+            if (activeSkillCard) {
+                activeSkillCard.classList.remove('is-active');
+                activeSkillCard.setAttribute('aria-expanded', 'false');
+            }
+
+            activeSkillCard = null;
+        }
+
+        function positionSkillTooltip(card) {
+            if (!skillTooltip || !skillsGroups || !card) return;
+
+            if (window.innerWidth <= 640) {
+                skillTooltip.style.removeProperty('top');
+                skillTooltip.style.removeProperty('left');
+                document.body.classList.add('skill-tooltip-open');
+                return;
+            }
+
+            document.body.classList.remove('skill-tooltip-open');
+
+            const containerRect = skillsGroups.getBoundingClientRect();
+            const cardRect = card.getBoundingClientRect();
+            const tooltipWidth = skillTooltip.offsetWidth;
+            const top = cardRect.bottom - containerRect.top + 14;
+            const centeredLeft = (cardRect.left - containerRect.left) + (cardRect.width / 2) - (tooltipWidth / 2);
+            const maxLeft = Math.max(containerRect.width - tooltipWidth, 0);
+            const left = Math.min(Math.max(centeredLeft, 0), maxLeft);
+
+            skillTooltip.style.top = `${top}px`;
+            skillTooltip.style.left = `${left}px`;
+        }
+
+        function openSkillTooltip(card) {
+            if (!skillTooltip || !skillTooltipTitle || !skillTooltipDescription) return;
+
+            const { skillName, skillDescription } = card.dataset;
+
+            if (activeSkillCard === card && skillTooltip.classList.contains('is-visible')) {
+                closeSkillTooltip();
+                return;
+            }
+
+            if (activeSkillCard) {
+                activeSkillCard.classList.remove('is-active');
+                activeSkillCard.setAttribute('aria-expanded', 'false');
+            }
+
+            activeSkillCard = card;
+            activeSkillCard.classList.add('is-active');
+            activeSkillCard.setAttribute('aria-expanded', 'true');
+
+            skillTooltipTitle.textContent = skillName || 'Skill';
+            skillTooltipDescription.textContent = skillDescription || '';
+            skillTooltip.hidden = false;
+            positionSkillTooltip(card);
+
+            window.requestAnimationFrame(() => {
+                skillTooltip.classList.add('is-visible');
+                const tooltipRect = skillTooltip.getBoundingClientRect();
+                const isOutOfView = tooltipRect.bottom > window.innerHeight || tooltipRect.top < 0;
+
+                if (isOutOfView) {
+                    skillTooltip.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+            });
+        }
+
+        skillCards.forEach((card) => {
+            card.setAttribute('aria-controls', 'skill-tooltip');
+            card.setAttribute('aria-expanded', 'false');
+
+            card.addEventListener('click', () => {
+                openSkillTooltip(card);
+            });
+        });
+
+        skillTooltipClose?.addEventListener('click', () => {
+            closeSkillTooltip();
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!skillTooltip || skillTooltip.hidden) return;
+
+            const clickedSkillCard = event.target.closest('.skill-card');
+
+            if (clickedSkillCard || skillTooltip.contains(event.target)) {
+                return;
+            }
+
+            closeSkillTooltip();
+        });
+
+        if (taglineText) {
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function typeTagline() {
+                const currentPhrase = taglinePhrases[phraseIndex];
+
+                if (isDeleting) {
+                    charIndex -= 1;
+                } else {
+                    charIndex += 1;
+                }
+
+                taglineText.textContent = currentPhrase.slice(0, charIndex);
+
+                let delay = isDeleting ? 35 : 65;
+
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    delay = 3600;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % taglinePhrases.length;
+                    delay = 450;
+                }
+
+                window.setTimeout(typeTagline, delay);
+            }
+
+            typeTagline();
+        }
+
+        window.addEventListener('keydown', async (event) => {
+            if (!bgMusic || isTypingTarget(event.target)) return;
+
+            const isSpace = event.code === 'Space' || event.key === ' ' || event.key === 'Spacebar';
+
+            if (isSpace) {
+                event.preventDefault();
+                await toggleMusicPlayback();
+                return;
+            }
+
+            if (event.key === 'ArrowRight') {
+                event.preventDefault();
+                await changeTrackByOffset(1);
+                return;
+            }
+
+            if (event.key === 'ArrowLeft') {
+                event.preventDefault();
+                await changeTrackByOffset(-1);
+            }
+        });
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && skillTooltip && !skillTooltip.hidden) {
+                closeSkillTooltip();
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (activeSkillCard && skillTooltip && !skillTooltip.hidden) {
+                positionSkillTooltip(activeSkillCard);
+            }
+        });
+    </script>
+</body>
+</html>
