@@ -497,13 +497,14 @@ a {
 
 .hero {
     position: relative;
-    min-height: 100vh;
-    display: grid;
+    min-height: auto;
+    display: flex;
     grid-template-columns: minmax(320px, 520px) 1fr;
-    align-items: center;
-    padding: 6rem 5.5vw 0;
-    overflow: visible;
+    align-items: start;
+    padding: 5.5rem 1rem 3rem;
+    overflow: hidden;
     z-index: 2;
+    flex-direction: column;
 }
 
 .hero::after {
@@ -691,14 +692,14 @@ a {
 }
 
 .hero-image {
-    position: absolute;
-    right: 3vw;
-    bottom: 0;
-    width: min(30vw, 230px);
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    z-index: 4;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(72vw, 260px);
+    margin: 1.25rem auto 0;
+    justify-content: center;
+    z-index: 1;
+    opacity: 1;
 }
 .hero-image img {
     width: 100%;
@@ -1707,28 +1708,29 @@ a {
 
 @media (max-width: 640px) {
     .hero {
-        grid-template-columns: 2fr;
-        padding-top: 7rem;
-        padding-bottom: 2rem;
-    }
+    min-height: auto;
+    padding: 5.5rem 1rem 3rem;
+    align-items: start;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
 
-    .hero-content {
-        max-width: 100%;
-        padding-top: 1rem;
-    }
+.hero-content {
+    max-width: 100%;
+    padding-top: 1.2rem;
+}
 
-    .tagline {
-        max-width: 100%;
-    }
-
-    .hero-image {
-        position: relative;
-        right: auto;
-        bottom: auto;
-        width: 90%;
-        margin: 2rem auto 0;
-        justify-content: center;
-    }
+.hero-image {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: min(72vw, 260px);
+    margin: 1.25rem auto 0;
+    justify-content: center;
+    z-index: 1;
+    opacity: 1;
+}
 
     .scroll-stage {
         height: 190vh;
