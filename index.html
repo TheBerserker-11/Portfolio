@@ -423,11 +423,10 @@
                 <div class="collaborate-orb collaborate-orb-two"></div>
             </div>
 
-            <div class="collaborate-section__content">
-                <p class="collaborate-kicker">Let&apos;s Connect</p>
-                <div class="collaborate-counter">
-                    <strong>Open</strong>
-                    <span>for freelance and collaboration</span>
+            <div class="collaborate-counter visitor-card" id="visitor-card">
+                <div class="visitor-label">LET'S CONNECT</div>
+                    <div id="visitor-count" class="visitor-number">000</div>
+                    <div class="visitor-text">VISITOR COUNT</div>
                 </div>
                 <h2 class="collaborate-title">
                     Connect with me on social media.
@@ -1083,5 +1082,86 @@
             }
         });
     </script>
+
+   <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getDatabase,
+  ref,
+  runTransaction,
+  onValue
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDTJkx_iaW_MamckZJpSr8QmkzBHh_1Gc",
+  authDomain: "portfolio-counter-74509.firebaseapp.com",
+  databaseURL: "https://portfolio-counter-74509-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "portfolio-counter-74509",
+  storageBucket: "portfolio-counter-74509.firebasestorage.app",
+  messagingSenderId: "592484526131",
+  appId: "1:592484526131:web:519aa92b819a1c00d79b46"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+const countRef = ref(db, "visitors/count");
+const countEl = document.getElementById("visitor-count");
+
+function padCount(value) {
+  return String(value).padStart(3, "0");
+}
+
+function animateCount(target) {
+  const currentText = countEl.textContent || "000";
+  const current = parseInt(currentText, 10) || 0;
+
+  if (current === target) {
+    countEl.textContent = padCount(target);
+    return;
+  }
+
+  const duration = 700;
+  const start = performance.now();
+
+  function step(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const value = Math.round(current + (target - current) * eased);
+
+    countEl.textContent = padCount(value);
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      countEl.classList.add("is-updating");
+      setTimeout(() => countEl.classList.remove("is-updating"), 450);
+    }
+  }
+
+  requestAnimationFrame(step);
+}
+
+const alreadyCounted = sessionStorage.getItem("portfolio_counted");
+
+if (!alreadyCounted) {
+  runTransaction(countRef, (current) => {
+    return (current || 0) + 1;
+  })
+  .then(() => {
+    sessionStorage.setItem("portfolio_counted", "true");
+  })
+  .catch((error) => {
+    console.error("Visitor counter update failed:", error);
+  });
+}
+
+onValue(countRef, (snapshot) => {
+  const count = snapshot.val() || 0;
+  animateCount(count);
+}, (error) => {
+  console.error("Visitor counter read failed:", error);
+  countEl.textContent = "000";
+});
+</script>
 </body>
 </html>

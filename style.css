@@ -2942,3 +2942,137 @@ h4,
 .collaborate-marquee-title::after {
     color: var(--accent);
 }
+
+.visitor-card {
+    position: relative;
+    min-width: 320px;
+    padding: 1.4rem 2rem 1.35rem;
+    border-radius: 28px;
+    text-align: center;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.06),
+        rgba(255, 255, 255, 0.03)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    animation: visitorCardReveal 0.9s ease both;
+}
+
+.visitor-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.18),
+        rgba(217, 70, 239, 0.4),
+        rgba(255, 255, 255, 0.08)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+.visitor-card::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(217, 70, 239, 0.18), transparent 70%);
+    filter: blur(8px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.visitor-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow:
+        0 28px 60px rgba(0, 0, 0, 0.34),
+        0 0 30px rgba(217, 70, 239, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: rgba(217, 70, 239, 0.24);
+}
+
+.visitor-label {
+    font-size: 0.9rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 0.9rem;
+}
+
+.visitor-number {
+    font-size: clamp(3.2rem, 7vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #d946ef;
+    text-shadow:
+        0 0 10px rgba(217, 70, 239, 0.28),
+        0 0 24px rgba(217, 70, 239, 0.16);
+    margin-bottom: 0.65rem;
+}
+
+.visitor-text {
+    font-size: 0.95rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.visitor-number.is-updating {
+    animation: pulseCount 0.45s ease;
+}
+
+@keyframes visitorCardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulseCount {
+    0% {
+        transform: scale(0.96);
+        opacity: 0.7;
+    }
+    60% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .visitor-card {
+        min-width: min(320px, 92vw);
+        padding: 1.2rem 1.4rem 1.15rem;
+        border-radius: 24px;
+    }
+
+    .visitor-label,
+    .visitor-text {
+        letter-spacing: 0.22em;
+    }
+}
