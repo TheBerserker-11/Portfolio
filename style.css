@@ -692,20 +692,20 @@ a {
 
 .hero-image {
     position: absolute;
-    right: 5vw;
+    right: 3vw;
     bottom: 0;
-    width: min(55vw, 950px);
+    width: min(32vw, 480px);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     z-index: 4;
 }
-
 .hero-image img {
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 30px 60px rgba(0,0,0,0.4));
+    object-fit: contain;
+    filter: drop-shadow(0 25px 50px rgba(0,0,0,0.35));
 }
 
 .scroll-stage {
