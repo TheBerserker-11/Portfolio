@@ -692,13 +692,12 @@ a {
 
 .hero-image {
     position: absolute;
-    right: 10vw;
-    bottom: -150px;
-    width: min(38vw, 760px);
+    right: 0;
+    bottom: -30px;
+    width: min(52vw, 1050px);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    transform: translateX(-30deg);
     z-index: 4;
 }
 
@@ -706,6 +705,7 @@ a {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: contain;
 }
 
 .scroll-stage {
@@ -1705,7 +1705,7 @@ a {
     }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 640px) {
     .hero {
         grid-template-columns: 2fr;
         padding-top: 7rem;
@@ -1724,9 +1724,10 @@ a {
     .hero-image {
         position: relative;
         right: auto;
-        width: min(92vw, 520px);
         bottom: auto;
+        width: 90%;
         margin: 2rem auto 0;
+        justify-content: center;
     }
 
     .scroll-stage {
