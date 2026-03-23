@@ -693,7 +693,7 @@ a {
 
 .hero-image {
     position: absolute;
-    right: 20vw;
+    right: 30vw;
     bottom: 0;
     width: min(34vw, 230px);
     display: flex;
