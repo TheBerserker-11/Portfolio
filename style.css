@@ -693,22 +693,19 @@ a {
 
 .hero-image {
     position: absolute;
-    right: 38vw;
-    bottom: 0;
-    width: min(34vw, 230px);
+    right: 10vw;
+    bottom: -150px;
+    width: min(38vw, 760px);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    transform: translateX(-30deg);
     z-index: 4;
-    margin: 0;
-    opacity: 1;
 }
 .hero-image img {
-    width: 100%;
+   width: 100%;
     height: auto;
     display: block;
-    object-fit: contain;
-    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.35));
 }
 
 .scroll-stage {
