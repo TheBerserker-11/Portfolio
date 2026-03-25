@@ -695,7 +695,7 @@ a {
     position: absolute;
     right: 6vw;
     bottom: -40px;
-    width: min(20vw, 220px);
+    width: min(24vw, 320px);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
