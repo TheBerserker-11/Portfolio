@@ -694,8 +694,8 @@ a {
 .hero-image {
     position: absolute;
     right: 14vw;
-    bottom: -40px;
-    width: min(24vw, 410px);
+    bottom: -20px;
+    width: min(24vw, 360px);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
