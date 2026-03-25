@@ -693,13 +693,13 @@ a {
 
 .hero-image {
     position: absolute;
-    right: 6vw;
+    right: 10vw;
     bottom: -40px;
     width: min(24vw, 420px);
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    transform: translateX(-10deg);
+    transform: translateX(-15deg);
     z-index: 4;
 }
 .hero-image img {
