@@ -336,7 +336,7 @@
             </p>
         </div>
 
-        <div class="projects-grid">
+        <div class="projects-grid projects-grid--slider" tabindex="0" aria-label="Project slider">
             <a href="https://villadiana.shop/" target="_blank" rel="noopener noreferrer" class="project-card-link" data-project-link="https://villadiana.shop/" aria-label="Open Villadiana project">
                 <article class="project-card project-card-dark">
                     <div class="project-card__bg"></div>
@@ -348,7 +348,7 @@
                         <img src="assets/railway.png" alt="Railway">
                     </div>
                     <div class="project-card__mockup project-card__mockup-image">
-                        <img src="assets/thesis.png" alt="E-PACD project preview">
+                        <img src="assets/thesis.png" alt="Villa Diana Hotel project preview">
                     </div>
                     <div class="project-card__body">
                         <h3>Hotel Booking System with Web-Based Virtual Tour</h3>
@@ -356,9 +356,47 @@
                     </div>
                 </article>
             </a>
+            <a href="https://osca.gt.tc/?i=1" target="_blank" rel="noopener noreferrer" class="project-card-link" data-project-link="https://osca.gt.tc/?i=1" aria-label="Open OSCA Masterlist project">
+                <article class="project-card project-card-dark">
+                    <div class="project-card__bg"></div>
+                    <div class="project-card__glow"></div>
+                    <div class="project-card__stack">
+                        <img src="assets/html.svg" alt="HTML">
+                        <img src="assets/css.svg" alt="CSS">
+                        <img src="assets/javascript.svg" alt="JavaScript">
+                        <img src="assets/bootstrap.svg" alt="Bootstrap">
+                    </div>
+                    <div class="project-card__mockup project-card__mockup-image">
+                        <img src="assets/osca.png" alt="OSCA Msterlist project preview">
+                    </div>
+                    <div class="project-card__body">
+                        <h3>OSCA Masterlist</h3>
+                        <p>A comprehensive database for managing and displaying information about various projects and initiatives within the OSCA community.</p>
+                    </div>
+                </article>
+            </a>
+            <a href="https://skturodsur.free.nf/" target="_blank" rel="noopener noreferrer" class="project-card-link" data-project-link="https://skturodsur.free.nf/" aria-label="Open SK Turod Sur Webpage project">
+                <article class="project-card project-card-dark">
+                    <div class="project-card__bg"></div>
+                    <div class="project-card__glow"></div>
+                    <div class="project-card__stack">
+                        <img src="assets/html.svg" alt="HTML">
+                        <img src="assets/css.svg" alt="CSS">
+                        <img src="assets/javascript.svg" alt="JavaScript">
+                        <img src="assets/bootstrap.svg" alt="Bootstrap">
+                    </div>
+                    <div class="project-card__mockup project-card__mockup-image">
+                        <img src="assets/sk.png" alt="SK Turod Sur Webpage project preview">
+                    </div>
+                    <div class="project-card__body">
+                        <h3>SK Turod Sur Webpage</h3>
+                        <p>A responsive website for showcasing the services and offerings of SK Turod Sur.</p>
+                    </div>
+                </article>
+            </a>
         </div>
+        
     </section>
-
     <section class="collaborate-marquee-section" aria-label="Collaboration marquee">
         <div class="collaborate-marquee-section__sticky">
             <div class="collaborate-marquee-section__bg" aria-hidden="true">
@@ -483,6 +521,7 @@
         const menuSongButtons = document.querySelectorAll('.menu-song');
         const playlistButtons = Array.from(menuSongButtons);
         const initialTrackButton = playlistButtons[0];
+        const projectSlider = document.querySelector('.projects-grid--slider');
         let activeSkillCard = null;
         let autoplayPrimed = true;
         let currentTrack = initialTrackButton ? {
@@ -641,6 +680,21 @@
                 setMenuMusicState(false);
             }
         });
+
+        if (projectSlider) {
+            projectSlider.addEventListener('wheel', (event) => {
+                const shouldSlideSideways = Math.abs(event.deltaY) > Math.abs(event.deltaX);
+                const canSlide = projectSlider.scrollWidth > projectSlider.clientWidth + 8;
+
+                if (!shouldSlideSideways || !canSlide) return;
+
+                event.preventDefault();
+                projectSlider.scrollBy({
+                    left: event.deltaY,
+                    behavior: 'auto'
+                });
+            }, { passive: false });
+        }
 
         projectCardLinks.forEach((link) => {
             const card = link.querySelector('.project-card');

@@ -2815,6 +2815,46 @@ h4,
     box-shadow: 0 28px 56px rgba(0, 0, 0, 0.24);
 }
 
+.projects-showcase {
+    overflow: hidden;
+}
+
+.projects-grid {
+    position: relative;
+    width: min(1400px, 100%);
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.projects-grid--slider {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(82vw, 900px);
+    gap: clamp(1rem, 2vw, 1.8rem);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    padding: 1rem clamp(1rem, 3vw, 2rem) 2.2rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+}
+
+.projects-grid--slider::-webkit-scrollbar {
+    display: none;
+}
+
+.projects-grid--slider:focus-visible {
+    outline: 2px solid rgba(116, 231, 216, 0.7);
+    outline-offset: 6px;
+    border-radius: 24px;
+}
+
+.projects-grid--slider .project-card-link {
+    scroll-snap-align: center;
+    width: 100%;
+}
+
 .project-card-link:hover .project-card {
     box-shadow: 0 38px 76px rgba(0, 0, 0, 0.32);
 }
