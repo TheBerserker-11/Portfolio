@@ -11,18 +11,18 @@
     <title>Daniel Loyd C. Andres</title>
 </head>
 <body>
-    <audio id="bg-music" loop preload="auto" autoplay playsinline>
-        <source src="assets/Music/Still Loving You.mp3" type="audio/mpeg">
+    <audio id="bg-music" preload="auto" autoplay playsinline>
+        <source src="assets/Music/same ground.mp3" type="audio/mpeg">
     </audio>
 
     <button class="music-toggle" type="button" aria-pressed="false" aria-label="Play background music">
         <span class="music-toggle__cover" aria-hidden="true">
-            <img src="assets/Music/Scorpions.jpg" alt="">
+            <img src="assets/Music/kitchie nadal.jpg" alt="">
         </span>
         <span class="music-toggle__text">
             <span class="music-toggle__eyebrow">Background Audio</span>
-            <span class="music-toggle__label">Still Loving You</span>
-            <span class="music-toggle__meta">Scorpions</span>
+            <span class="music-toggle__label">Same Ground</span>
+            <span class="music-toggle__meta">Kitchie Nadal</span>
         </span>
         <span class="music-toggle__icon" aria-hidden="true">
             <span></span>
@@ -66,6 +66,30 @@
                 <button class="music-modal__close" type="button" aria-label="Close music modal">&times;</button>
             </div>
             <div class="music-modal__list">
+                <button
+                    class="menu-song"
+                    type="button"
+                    data-track="same ground"
+                    data-src="assets/Music/same ground.mp3"
+                    data-cover="assets/Music/kitchie nadal.jpg"
+                    data-title="Same Ground"
+                    data-artist="Kitchie Nadal"
+                >
+                    <span class="menu-song__title">Same Ground</span>
+                    <span class="menu-song__artist">Kitchie Nadal</span>
+                </button>
+                <button
+                    class="menu-song"
+                    type="button"
+                    data-track="always somewhere"
+                    data-src="assets/Music/Always Somewhere.mp3"
+                    data-cover="assets/Music/SCORPION.jpg"
+                    data-title="Always Somewhere"
+                    data-artist="Scorpions"
+                >
+                    <span class="menu-song__title">Always Somewhere</span>
+                    <span class="menu-song__artist">Scorpions</span>
+                </button>
                 <button
                     class="menu-song"
                     type="button"
@@ -480,7 +504,7 @@
                 <p class="collaborate-email">
                     📩 Contact me:
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=danielloydandres8@gmail.com"
-                       target="_blank">
+                    target="_blank">
                         danielloydandres8@gmail.com
                     </a>
                 </p>
@@ -534,11 +558,11 @@
             src: initialTrackButton.dataset.src || '',
             cover: initialTrackButton.dataset.cover || ''
         } : {
-            title: 'Still Loving You',
-            artist: 'Scorpions',
-            src: 'assets/Music/Still Loving You.mp3',
-            cover: 'assets/Music/Scorpions.jpg',
-            id: 'still loving you'
+            title: 'Same Ground',
+            artist: 'Kitchie Nadal',
+            src: 'assets/Music/same ground.mp3',
+            cover: 'assets/Music/kitchie nadal.jpg',
+            id: 'same ground'
         };
         const taglinePhrases = [
             'Build smart. Scale fast. Deliver value.',
@@ -949,8 +973,8 @@
                 await toggleMusicPlayback();
             });
 
-            bgMusic.addEventListener('ended', () => {
-                setMusicButtonState(false);
+            bgMusic.addEventListener('ended', async () => {
+                await changeTrackByOffset(1);
             });
 
             bgMusic.addEventListener('error', () => {
